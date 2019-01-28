@@ -5,6 +5,8 @@
  */
 package testcode;
 
+import java.util.*;
+
 /**
  *
  * @author ricky
@@ -16,6 +18,16 @@ public class TestCode {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+        Merchant proses = new Merchant();
+        Scanner sc = new Scanner(System.in);
+        String input = "";
+        while (input != "end") {
+            input = sc.nextLine();
+            proses.process(input);
+
+        }
+
     }
-    
+
 }
