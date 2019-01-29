@@ -35,14 +35,13 @@ public class Merchant {
 
         String str[] = text.split(" ");
         String temp = str[str.length - 1];
-        
+
         //Check Symbol Value
-        if ((Roman.containsKey(temp))&&(str[str.length-2].equals("is"))) { 
+        if ((Roman.containsKey(temp)) && (str[str.length - 2].equals("is"))) {
             data.put(str[0], Roman.get(temp));
-       //     System.out.println(data.entrySet());
-        }
-        //Check Metals Credits
-        else if ((temp.equals("Credits")&& (str[str.length-3].equals("is")))) {
+            //     System.out.println(data.entrySet());
+        } //Check Metals Credits
+        else if ((temp.equals("Credits") && (str[str.length - 3].equals("is")))) {
 
             Double credits = Double.valueOf(str[str.length - 2]);//Nilai Credits
             int countIterasi = 0;
@@ -68,7 +67,7 @@ public class Merchant {
                             countSumData += data.get(check);
                             countIterasi++;
                         }
-                    }                
+                    }
 
                 } else {
                     condition = false;
@@ -79,9 +78,9 @@ public class Merchant {
             }
             if (condition == true) {
                 MineralPrice.put(check, Double.valueOf(credits / countSumData));
-               // System.out.println(MineralPrice.entrySet());
+                // System.out.println(MineralPrice.entrySet());
             }
-        } else if ((temp.equals("?"))&&(str[0].equals("how"))) {
+        } else if ((temp.equals("?")) && (str[0].equals("how"))) {
             int result = 0;
             String Result = "";
             if (str[1].equals("much")) {
@@ -150,6 +149,31 @@ public class Merchant {
             System.out.println("I have no idea what you are talking about");
 
         }
+
+    }
+
+    public boolean checkCondition(String roman) {
+        ArrayList<String> I = new ArrayList<String>();
+        ArrayList<String> X = new ArrayList<String>();
+        ArrayList<String> neverSubs = new ArrayList<String>();
+
+        I.add("V");
+        I.add("X");
+        X.add("L");
+        X.add("C");
+        neverSubs.add("V");
+        neverSubs.add("L");
+        neverSubs.add("D");
+        
+        boolean result = true;
+        char temp =roman.charAt(0);
+        
+        for(int i=1;i<roman.length();i++)
+        {
+          //  if(temp)
+        }
+        
+        return result;
 
     }
 
